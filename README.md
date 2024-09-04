@@ -1,12 +1,12 @@
 ## MDP Representation
 
-## Problem Statement:
+### Problem Statement:
 A robot needs to navigate through a warehouse to reach a specific storage location while avoiding obstacles and minimizing time.
 
-## Problem Description:
+### Problem Description:
 The warehouse is represented by a grid, with each cell being a state. The robot can move in four directions (up, down, left, right). The goal is to find the optimal path from the robot's starting position to the target storage location.
 
-## MDP Representation:
+### MDP Representation:
 1. States (S)
 Each state represents a specific cell in the warehouse grid. For example, in a 3x3 grid:
 
@@ -54,27 +54,27 @@ P(S9, A1, S6) = 1: Moving up from (3,3) leads to (2,3), but this is the target s
 import matplotlib.pyplot as plt
 import networkx as nx
 
-# Create a directed graph
+## Create a directed graph
 G = nx.DiGraph()
 
-# Define the states
+## Define the states
 states = ['S1', 'S2', 'S3', 'S4']
 
-# Add nodes to the graph
+## Add nodes to the graph
 G.add_nodes_from(states)
 
-# Define the transitions with probabilities
+## Define the transitions with probabilities
 transitions = [
     ('S1', 'S2', 0.5),  # Entrance to Reception
     ('S2', 'S3', 0.6),  # Reception to Security Room
     ('S3', 'S4', 0.3)   # Security Room to Storage Room
 ]
 
-# Add edges to the graph with labels as probabilities
+## Add edges to the graph with labels as probabilities
 for (start, end, prob) in transitions:
     G.add_edge(start, end, weight=prob)
 
-# Define positions for each node (for visualization)
+## Define positions for each node (for visualization)
 pos = {
     'S1': (0, 1),  # Entrance
     'S2': (1, 1),  # Reception
@@ -82,22 +82,22 @@ pos = {
     'S4': (0, 0)   # Storage Room
 }
 
-# Draw the graph
+## Draw the graph
 plt.figure(figsize=(8, 6))
 nx.draw(G, pos, with_labels=True, node_size=3000, node_color='lightblue', font_size=10, font_weight='bold', arrowsize=20)
 
-# Draw edge labels (probabilities)
+## Draw edge labels (probabilities)
 edge_labels = {(start, end): f'{prob}' for (start, end, prob) in transitions}
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
 
-# Show the plot
+## Show the plot
 plt.title("MDP Representation Based on Provided Diagram")
 plt.show()
 
 
-OUTPUT:
+## OUTPUT:
 ![image](https://github.com/user-attachments/assets/ba6f6e63-a878-4e9a-ba74-f44e519f53c2)
 
 
-RESULT:
+## RESULT:
 THe project for programming MDP executed Successfully.
