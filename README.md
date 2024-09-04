@@ -1,4 +1,4 @@
-### MDP Reoresentation
+## MDP Representation
 
 ## Problem Statement:
 A robot needs to navigate through a warehouse to reach a specific storage location while avoiding obstacles and minimizing time.
